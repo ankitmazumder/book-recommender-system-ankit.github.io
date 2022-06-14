@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Book Recommender System</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <style>
+        .text-white{
+            color: aliceblue;
+        }
+        .text-black{
+            color: black;
+        }
+    </style>
+    <body style="background-color: Black">
+         
+        <nav class="navbar"  style="background-color: rgb(143, 105, 231)">
+            <a class="navbar-brand">My Book Recommender</a>
+             <a class="nav navbar-nav">
+                <a href="/">Home</a>
+                <a href="/recommend">Recommend</a>
+                <a href="">Contact</a>
+            </a>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-white" style="font-size: 50px">Top 50 Books</h1>
+                </div>
+
+            {% for i in range(book_name|length) %}
+                <div class="col-md-3" style="margin-top:30px">
+                    <div class="card">
+                        <div class="card-body">
+
+                        <img class="card-img-top" src="{{ image[i] }}"></img>
+                        <p class="text-black">{{ book_name[i] }}</p>
+                        <h4 class="text-black">{{ author[i] }}</h4>
+                        <h4 class="text-black">Votes - {{ votes[i] }}</h4>
+                        <h4 class="text-black">Rating - {{ rating[i] }}</h4>
+                    </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
